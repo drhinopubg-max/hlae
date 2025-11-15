@@ -64,7 +64,19 @@
       0% { transform: translateY(0); opacity: 0.8; }
       100% { transform: translateY(-120vh); opacity: 0; }
     }
-</style>
+    .slideshow {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      margin: 20px auto;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 25px rgba(255,120,160,0.35);
+    }
+    .slide {
+      position: absolute;
+      width: 100%;
+      height:
 </head>
 <body>
   <div class="card fade">
@@ -81,11 +93,11 @@
     </p>
   </div>
     <iframe width="0" height="0" src="https://www.youtube.com/embed/nyuo9-OjNNg?autoplay=1&loop=1&playlist=nyuo9-OjNNg" frameborder="0" allow="autoplay"></iframe>
-  <div class="gallery fade">
-      <img src="https://i.ibb.co/jkVv5DmL/image.jpg" class="gimg"/>
-      <img src="https://i.ibb.co/FQGSMMT/image.jpg" class="gimg"/>
-      <img src="https://i.ibb.co/DfnFyhfN/image.jpg" class="gimg"/>
-      <img src="https://i.ibb.co/4n0tnGL8/image.jpg" class="gimg"/>
+  <div class="slideshow fade">
+      <img src="https://i.ibb.co/jkVv5DmL/image.jpg" class="slide"/>
+      <img src="https://i.ibb.co/FQGSMMT/image.jpg" class="slide"/>
+      <img src="https://i.ibb.co/DfnFyhfN/image.jpg" class="slide"/>
+      <img src="https://i.ibb.co/4n0tnGL8/image.jpg" class="slide"/>
   </div>
   <script>
     // Floating hearts
