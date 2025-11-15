@@ -85,9 +85,33 @@
       border-radius: 50%;
       box-shadow: 0 0 30px rgba(255,150,200,0.9);
     }
+    }
     .slide.active {
       opacity: 1;
     }
+    .float-container {
+      position: relative;
+      width: 100%;
+      height: 350px;
+      margin-top: 20px;
+    }
+    .float-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 20px;
+      position: absolute;
+      animation: float 6s ease-in-out infinite alternate;
+      box-shadow: 0 0 25px rgba(255,150,200,0.7);
+    }
+    @keyframes float {
+      0% { transform: translateY(0px) translateX(0px); }
+      100% { transform: translateY(-25px) translateX(20px); }
+    }
+    .f1 { top: 10px; left: 20px; animation-duration: 5s; }
+    .f2 { top: 50px; right: 20px; animation-duration: 6s; }
+    .f3 { bottom: 20px; left: 60px; animation-duration: 7s; }
+    .f4 { bottom: 30px; right: 60px; animation-duration: 5.5s; }
 </style>
 </head>
 <body>
@@ -105,11 +129,11 @@
     </p>
   </div>
     <iframe width="0" height="0" src="https://www.youtube.com/embed/nyuo9-OjNNg?autoplay=1&loop=1&playlist=nyuo9-OjNNg" frameborder="0" allow="autoplay"></iframe>
-  <div class="slideshow fade">
-      <img src="https://i.ibb.co/jkVv5DmL/image.jpg" class="slide"/>
-      <img src="https://i.ibb.co/FQGSMMT/image.jpg" class="slide"/>
-      <img src="https://i.ibb.co/DfnFyhfN/image.jpg" class="slide"/>
-      <img src="https://i.ibb.co/4n0tnGL8/image.jpg" class="slide"/>
+  <div class="float-container">
+      <img src="https://i.ibb.co/jkVv5DmL/image.jpg" class="float-img f1"/>
+      <img src="https://i.ibb.co/FQGSMMT/image.jpg" class="float-img f2"/>
+      <img src="https://i.ibb.co/DfnFyhfN/image.jpg" class="float-img f3"/>
+      <img src="https://i.ibb.co/4n0tnGL8/image.jpg" class="float-img f4"/>
   </div>
   <script>
     // Floating hearts
