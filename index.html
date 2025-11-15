@@ -69,14 +69,26 @@
       width: 250px;
       height: 250px;
       margin: 20px auto;
-      border-radius: 20px;
+      border-radius: 50%;
       overflow: hidden;
+      box-shadow: 0 0 25px rgba(255,120,160,0.6);
+    }
       box-shadow: 0 8px 25px rgba(255,120,160,0.35);
     }
     .slide {
       position: absolute;
       width: 100%;
-      height:
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 2.5s ease-in-out;
+      border-radius: 50%;
+      box-shadow: 0 0 30px rgba(255,150,200,0.9);
+    }
+    .slide.active {
+      opacity: 1;
+    }
+</style>
 </head>
 <body>
   <div class="card fade">
@@ -113,6 +125,17 @@
       document.body.appendChild(heart);
       setTimeout(() => heart.remove(), 4000);
     }, 800);
+      let slideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+
+    function showSlides() {
+      slides.forEach(slide => slide.classList.remove('active'));
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add('active');
+    }
+
+    slides[0].classList.add('active');
+    setInterval(showSlides, 5000);
   </script>
 </body>
 </html>
