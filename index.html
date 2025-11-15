@@ -9,7 +9,7 @@
       margin: 0;
       padding: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      background: linear-gradient(135deg, #ffb6d5, #ffdde9);
       height: 100vh;
       display: flex;
       justify-content: center;
@@ -18,12 +18,12 @@
       color: #fff;
     }
     .card {
-      background: rgba(255,255,255,0.15);
+      background: rgba(255, 240, 245, 0.55);
       padding: 40px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      backdrop-filter: blur(8px);
-      max-width: 400px;
+      border-radius: 25px;
+      box-shadow: 0 10px 40px rgba(255, 150, 200, 0.3);
+      backdrop-filter: blur(12px);
+      max-width: 420px;
     }
     h1 {
       font-size: 2.2rem;
@@ -42,13 +42,35 @@
       50% { transform: scale(1.2); }
       100% { transform: scale(1); }
     }
-  </style>
+      .fade {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1.5s ease forwards;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .gimg {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin: 10px;
+      box-shadow: 0 5px 15px rgba(255,100,150,0.4);
+      animation: fadeIn 2s ease;
+    }
+    @keyframes floatUp {
+      0% { transform: translateY(0); opacity: 0.8; }
+      100% { transform: translateY(-120vh); opacity: 0; }
+    }
+</style>
 </head>
 <body>
-  <div class="card">
+  <div class="card fade">
     <div class="heart">❤️</div>
-    <img src="https://ibb.co/FQGSMMT" alt="Hla E" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; margin-top: 15px; margin-bottom: 15px;"/>
-    <h1>Hla E My Love...</h1>
+    <img src="YOUR-IMAGE-LINK" alt="Hla E" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; margin-top: 15px; margin-bottom: 15px;"/>
+    <h1>Hey Hla E...</h1>
     <p>
       I just wanted to say something simple,<br>
       something honest,<br>
@@ -59,5 +81,26 @@
     </p>
   </div>
     <iframe width="0" height="0" src="https://www.youtube.com/embed/nyuo9-OjNNg?autoplay=1&loop=1&playlist=nyuo9-OjNNg" frameborder="0" allow="autoplay"></iframe>
+  <div class="gallery fade">
+      <img src="https://i.ibb.co/jkVv5DmL/image.jpg" class="gimg"/>
+      <img src="https://i.ibb.co/FQGSMMT/image.jpg" class="gimg"/>
+      <img src="https://i.ibb.co/DfnFyhfN/image.jpg" class="gimg"/>
+      <img src="https://i.ibb.co/4n0tnGL8/image.jpg" class="gimg"/>
+  </div>
+  <script>
+    // Floating hearts
+    setInterval(() => {
+      const heart = document.createElement('div');
+      heart.innerHTML = '💗';
+      heart.style.position = 'fixed';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.bottom = '0px';
+      heart.style.fontSize = '20px';
+      heart.style.opacity = '0.8';
+      heart.style.animation = 'floatUp 4s linear forwards';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 4000);
+    }, 800);
+  </script>
 </body>
 </html>
